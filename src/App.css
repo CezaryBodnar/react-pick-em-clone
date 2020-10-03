@@ -1,38 +1,143 @@
-.App {
+.container {
+  background-image: url("robyn-natalie-lau.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  margin: 10%;
+  width: 80%;
+  border-radius: 4px;
+}
+.content .nav {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  background-color:  rgb(24, 24, 24);
+}
+.nav .title {
+  color: white;
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 1rem;
+}
+.content .helper-text{
+  width: 100%;
+  color: white;
+  font-family: "Nunito";
+  font-weight: 300;
+  font-size: 14px;
+  margin-left: 1rem;
+  margin: 2rem;
+}
+.content .helper-saved{
+  width: 100%;
+  color: white;
+  font-family: "Nunito";
+  font-weight: 300;
+  font-size: 16px;
+  margin-left: 1rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.content .main-content {
+  height: auto;
+  min-height: 300px;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  background-color: rgba(0, 0, 0, 0.9);
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding-bottom: 100px;
+}
+ .group-container {
+  width: 480px;
+  height: auto;
+  /* background-color: rgb(59, 59, 59); */
+  border-radius: 2px;
+  margin: 20px;
+}
+.group-container .group-nav{
+  width: 100%;
+  height: 50px;
+  background-color:  rgb(24, 24, 24);
+  display: flex;
+  align-items: center;
+}
+.group-container .group-nav .group-title {
   color: white;
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 1rem;
+}
+.rank .slot-rank {
+  color: white;
+  font-family: "Nunito";
+  font-weight: bold;
+  font-size: 20px;
+
+}
+.group-container .rank {
+  width: 85px;
+  height: 85px;
+  background-color: #0e0e0e;
+  text-align: center;
+  line-height: 85px;
+  border-bottom: 1px solid rgb(100, 100, 100);
+}
+.group-container .rank:last-child {
+  border-bottom: none;
 }
 
-.App-link {
-  color: #61dafb;
+.group-container .team-div {
+  display: flex;
+  align-content: center;
+  height: 85px;
+  background-color:#212121;
+  text-align: center;
+  line-height: 85px;
+  border-bottom: 1px solid rgb(15, 15, 15);
+  cursor: grab;
+}
+.teams {
+  display: flex;
+  
+}
+.team-name {
+  color: white;
+  font-family: "Nunito";
+  font-size: 16px;
+  margin-left: 5%;
+}
+.team-logo {
+  margin-left: 1rem;
+  display: flex;
+  align-content: center;
+}
+img {
+  object-fit: contain;
+}
+i {
+  font-size: 34px;
+  color: rgb(15, 15, 15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.team-wrapper {
+  justify-content: flex-end;
+  width: 100%;
+}
+.numbers {
+  justify-content: flex-start;
+}
+.drag-icon {
+  margin-left: auto;
+  margin-right: 1rem;
+  opacity: 30%;
 }
