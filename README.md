@@ -1,6 +1,8 @@
 
 ## Pick'em App
 
+[Demo](https://pickem-clone.netlify.app/)
+
  League of legends pickem clone made with React and react-beautiful-dnd
 
  ### Functionality:
