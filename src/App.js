@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Draggable, Droppable, DragDropContext } from 'react-beautiful-dnd'
 
@@ -29,6 +29,57 @@ function App() {
     { id: "12", name: "FlyQuest", image: "https://am-a.akamaihd.net/image/?resize=52:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1592590438547_FlyQuestFLY-01-FullonDark.png" },
   ])
 
+  const saveLocalA = () => {
+    localStorage.setItem('group-A', JSON.stringify(groupA));
+  }
+  const saveLocalB = () => {
+    localStorage.setItem('group-B', JSON.stringify(groupB));
+  }
+  const saveLocalC = () => {
+    localStorage.setItem('group-C', JSON.stringify(groupC));
+  }
+  const saveLocalD = () => {
+    localStorage.setItem('group-D', JSON.stringify(groupD));
+  }
+  const getLocal = () => {
+    if (localStorage.getItem('group-A') === null) {
+      localStorage.setItem('group-A', JSON.stringify([]));
+    } else {
+      let localA = JSON.parse(localStorage.getItem('group-A'));
+      setgroupA(localA);
+    }
+
+    if (localStorage.getItem('group-B') === null) {
+      localStorage.setItem('group-B', JSON.stringify([]));
+    } else {
+      let localB = JSON.parse(localStorage.getItem('group-B'));
+      setgroupB(localB);
+    }
+
+    if (localStorage.getItem('group-C') === null) {
+      localStorage.setItem('group-C', JSON.stringify([]));
+    } else {
+      let localC = JSON.parse(localStorage.getItem('group-C'));
+      setgroupC(localC);
+    }
+
+    if (localStorage.getItem('group-D') === null) {
+      localStorage.setItem('group-D', JSON.stringify([]));
+    } else {
+      let localD = JSON.parse(localStorage.getItem('group-D'));
+      setgroupD(localD);
+    }
+  }
+
+  useEffect(() => {
+    getLocal();
+  }, [])
+  useEffect(() => {
+    saveLocalA();
+    saveLocalB();
+    saveLocalC();
+    saveLocalD();
+  }, [groupA, groupB, groupC, groupD])
 
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
